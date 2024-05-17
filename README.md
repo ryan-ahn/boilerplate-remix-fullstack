@@ -6,32 +6,34 @@
 
 ## Features
 - [x] ⚙️&nbsp;&nbsp;Small & Fast Bundler (Vite)
-- [x] 🗝️&nbsp;&nbsp;Typed Programming (Typescript)
-- [x] 🧩&nbsp;&nbsp;SSR & Page Transition (Remix)
-- [x] 🕋&nbsp;&nbsp;Simple Store (Zustand)
-- [x] 📙&nbsp;&nbsp;Use Strict Codebase (ESLint & Prettier)
-- [x] 🧵&nbsp;&nbsp;Built-in Component & Layout
-- [x] ✨&nbsp;&nbsp;Setting Reset Style
-- [x] ⚡️&nbsp;&nbsp;Setting Mixin Style
-- [x] 📍&nbsp;&nbsp;Absolute Path
-- [x] 📱&nbsp;&nbsp;Check Device
+- [x] 🌐&nbsp;&nbsp;Full-Stack Server Architecture (Remix + Supabase)
+- [x] 🗝️&nbsp;&nbsp;Typed Programming (TypeScript)
+- [x] 🗄️&nbsp;&nbsp;Database Design (Prisma)
+- [x] 🕋&nbsp;&nbsp;Simple State Management (Zustand)
+- [x] 📙&nbsp;&nbsp;Strict Codebase (ESLint & Prettier)
+- [x] 🧵&nbsp;&nbsp;Built-in Component & Layouts
+- [x] ✨&nbsp;&nbsp;Reset Style Setup
+- [x] ⚡️&nbsp;&nbsp;Mixin Style Setup
+- [x] 📍&nbsp;&nbsp;Absolute Paths
+- [x] 📱&nbsp;&nbsp;Check Detection
 - [x] 📫&nbsp;&nbsp;Page SEO
 - [ ] 🪄&nbsp;&nbsp;Dark Mode
 
 ## Frameworks
 - **Bundler** : Vite
-- **SSR** : Remix Server
+- **SSR** : Remix
 - **Core** : React
 - **Store** : Zustand
+- **Style** : Emotion
 
 ## Code Pattern
 - **Static(public)**
 - **Root(App)** <br/>
+- ⎣&nbsp;**constants** - static resource <br/>
 - ⎣&nbsp;**components** - atomic stateless components <br/>
 - ⎣&nbsp;**containers** - stateful components <br/>
-- ⎣&nbsp;**constants** - static resource <br/>
 - ⎣&nbsp;**interface** - interfaces <br/>
 - ⎣&nbsp;**layouts** - layouts <br/>
-- ⎣&nbsp;**routes** - page routes<br/>
 - ⎣&nbsp;**libs** - store, hooks, utils<br/>
+- ⎣&nbsp;**routes** - page routes<br/>
 - ⎣&nbsp;**styles** - style set<br/>
