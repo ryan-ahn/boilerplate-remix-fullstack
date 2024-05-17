@@ -24,34 +24,31 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "components/*"
+        "app/components/*"
       ],
       "@config/*": [
-        "config/*"
+        "app/config/*"
       ],
       "@constants/*": [
-        "constants/*"
+        "app/constants/*"
       ],
       "@containers/*": [
-        "containers/*"
+        "app/containers/*"
       ],
       "@interface/*": [
-        "interface/*"
+        "app/interface/*"
       ],
       "@layouts/*": [
-        "layouts/*"
+        "app/layouts/*"
       ],
       "@libs/*": [
-        "libs/*"
-      ],
-      "@pages/*": [
-        "pages/*"
+        "app/libs/*"
       ],
       "@routes/*": [
-        "routes/*"
+        "app/routes/*"
       ],
       "@styles/*": [
-        "styles/*"
+        "app/styles/*"
       ]
     },
   },

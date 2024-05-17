@@ -35,6 +35,7 @@
       }
     ],
     // 충돌 방지
+    "no-param-reassign": "off",
     "indent": "off",
     "no-alert": "off",
     "no-shadow": "off",
