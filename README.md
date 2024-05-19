@@ -6,7 +6,6 @@
 
 ## Features
 - [x] ⚙️&nbsp;&nbsp;Small & Fast Bundler (Vite)
-- [x] 🌐&nbsp;&nbsp;Full-Stack Server Architecture (Remix + Supabase)
 - [x] 🗝️&nbsp;&nbsp;Typed Programming (TypeScript)
 - [x] 🗄️&nbsp;&nbsp;Database Design (Prisma)
 - [x] 🕋&nbsp;&nbsp;Simple State Management (Zustand)

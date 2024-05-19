@@ -13,6 +13,7 @@
       "vite/client"
     ],
     "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "isolatedModules": true,
     "esModuleInterop": true,
     "noEmit": true,
@@ -35,8 +36,8 @@
       "@containers/*": [
         "app/containers/*"
       ],
-      "@interface/*": [
-        "app/interface/*"
+      "@interfaces/*": [
+        "app/interfaces/*"
       ],
       "@layouts/*": [
         "app/layouts/*"

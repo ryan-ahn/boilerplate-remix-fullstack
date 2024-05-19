@@ -2,7 +2,7 @@ import { PassThrough } from 'node:stream';
 import { renderToPipeableStream } from 'react-dom/server';
 import { isbot } from 'isbot';
 import { RemixServer } from '@remix-run/react';
-import type { AppLoadContext, EntryContext } from '@remix-run/node';
+import type { EntryContext } from '@remix-run/node';
 import { createReadableStreamFromReadable } from '@remix-run/node';
 
 const ABORT_DELAY = 5_000;
@@ -12,9 +12,7 @@ export default function handleRequest(
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext,
-  loadContext: AppLoadContext,
 ) {
-  console.log(loadContext);
   return isbot(request.headers.get('user-agent') || '')
     ? handleBotRequest(
         request,
