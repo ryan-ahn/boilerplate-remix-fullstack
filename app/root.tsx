@@ -21,9 +21,10 @@ const Document = withEmotionCache(
   ({ children, title }: DocumentProps, emotionCache) => {
     const serverStyleData = useContext(ServerStyleContext);
     const clientStyleData = useContext(ClientStyleContext);
-    const reinjectStylesRef = useRef(true);
+    const reInjectStylesRef = useRef(true);
+
     useEffect(() => {
-      if (!reinjectStylesRef.current) {
+      if (!reInjectStylesRef.current) {
         return;
       }
       emotionCache.sheet.container = document.head;
@@ -33,7 +34,7 @@ const Document = withEmotionCache(
         (emotionCache.sheet as any)._insertTag(tag);
       });
       clientStyleData.reset();
-      reinjectStylesRef.current = false;
+      reInjectStylesRef.current = false;
     }, [clientStyleData, emotionCache.sheet]);
 
     return (
