@@ -1,4 +1,5 @@
 import type { MetaFunction } from '@remix-run/node';
+import ContentContainer from '@containers/content/index';
 import { META_PAGE } from '@constants/data/meta';
 
 export const meta: MetaFunction = () => [
@@ -10,10 +11,5 @@ export const meta: MetaFunction = () => [
 ];
 
 export default function contentPage() {
-  return (
-    <div>
-      <h1>About Us</h1>
-      <p>This is the about page.</p>
-    </div>
-  );
+  return <ContentContainer />;
 }

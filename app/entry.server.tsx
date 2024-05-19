@@ -1,11 +1,10 @@
-import { PassThrough } from 'node:stream';
-import { renderToPipeableStream } from 'react-dom/server';
-import { isbot } from 'isbot';
+import { renderToString } from 'react-dom/server';
+import ServerStyleContext from '@styles/server';
+import createEmotionCache from '@styles/cache';
 import { RemixServer } from '@remix-run/react';
 import type { EntryContext } from '@remix-run/node';
-import { createReadableStreamFromReadable } from '@remix-run/node';
-
-const ABORT_DELAY = 5_000;
+import createEmotionServer from '@emotion/server/create-instance';
+import { CacheProvider } from '@emotion/react';
 
 export default function handleRequest(
   request: Request,
@@ -13,111 +12,31 @@ export default function handleRequest(
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
-  return isbot(request.headers.get('user-agent') || '')
-    ? handleBotRequest(
-        request,
-        responseStatusCode,
-        responseHeaders,
-        remixContext,
-      )
-    : handleBrowserRequest(
-        request,
-        responseStatusCode,
-        responseHeaders,
-        remixContext,
-      );
-}
+  const cache = createEmotionCache();
+  const { extractCriticalToChunks } = createEmotionServer(cache);
 
-function handleBotRequest(
-  request: Request,
-  responseStatusCode: number,
-  responseHeaders: Headers,
-  remixContext: EntryContext,
-) {
-  return new Promise((resolve, reject) => {
-    let shellRendered = false;
-    const { pipe, abort } = renderToPipeableStream(
-      <RemixServer
-        context={remixContext}
-        url={request.url}
-        abortDelay={ABORT_DELAY}
-      />,
-      {
-        onAllReady() {
-          shellRendered = true;
-          const body = new PassThrough();
-          const stream = createReadableStreamFromReadable(body);
+  const html = renderToString(
+    <ServerStyleContext.Provider value={null}>
+      <CacheProvider value={cache}>
+        <RemixServer context={remixContext} url={request.url} />
+      </CacheProvider>
+    </ServerStyleContext.Provider>,
+  );
 
-          responseHeaders.set('Content-Type', 'text/html');
+  const chunks = extractCriticalToChunks(html);
 
-          resolve(
-            new Response(stream, {
-              headers: responseHeaders,
-              status: responseStatusCode,
-            }),
-          );
+  const markup = renderToString(
+    <ServerStyleContext.Provider value={chunks.styles}>
+      <CacheProvider value={cache}>
+        <RemixServer context={remixContext} url={request.url} />
+      </CacheProvider>
+    </ServerStyleContext.Provider>,
+  );
 
-          pipe(body);
-        },
-        onShellError(error: unknown) {
-          reject(error);
-        },
-        onError(error: unknown) {
-          responseStatusCode = 500;
-          if (shellRendered) {
-            console.error(error);
-          }
-        },
-      },
-    );
+  responseHeaders.set('Content-Type', 'text/html');
 
-    setTimeout(abort, ABORT_DELAY);
-  });
-}
-
-function handleBrowserRequest(
-  request: Request,
-  responseStatusCode: number,
-  responseHeaders: Headers,
-  remixContext: EntryContext,
-) {
-  return new Promise((resolve, reject) => {
-    let shellRendered = false;
-    const { pipe, abort } = renderToPipeableStream(
-      <RemixServer
-        context={remixContext}
-        url={request.url}
-        abortDelay={ABORT_DELAY}
-      />,
-      {
-        onShellReady() {
-          shellRendered = true;
-          const body = new PassThrough();
-          const stream = createReadableStreamFromReadable(body);
-
-          responseHeaders.set('Content-Type', 'text/html');
-
-          resolve(
-            new Response(stream, {
-              headers: responseHeaders,
-              status: responseStatusCode,
-            }),
-          );
-
-          pipe(body);
-        },
-        onShellError(error: unknown) {
-          reject(error);
-        },
-        onError(error: unknown) {
-          responseStatusCode = 500;
-          if (shellRendered) {
-            console.error(error);
-          }
-        },
-      },
-    );
-
-    setTimeout(abort, ABORT_DELAY);
+  return new Response(`<!DOCTYPE html>${markup}`, {
+    status: responseStatusCode,
+    headers: responseHeaders,
   });
 }

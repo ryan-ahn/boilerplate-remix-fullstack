@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { flexSet, boxSet, colorSet, fontSet } from '@styles/mixin';
+import { flexSet, boxSet, colorSet } from '@styles/mixin';
 import { useNavigate } from '@remix-run/react';
 import styled from '@emotion/styled';
 import { CONTENT_PAGE } from '@constants/data/content';
@@ -45,10 +45,5 @@ const StyledWrapper = styled.div`
 
 const StyledContentBox = styled.div`
   ${flexSet('center', 'center', 'column')};
-  gap: 20px;
-  & > p {
-    ${fontSet(50, 500, 60)};
-    text-align: center;
-    white-space: pre-wrap;
-  }
+  gap: 25px;
 `;

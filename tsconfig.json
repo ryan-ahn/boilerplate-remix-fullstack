@@ -59,6 +59,7 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "remix.env.d.ts",
     "**/.server/**/*.ts",
     "**/.server/**/*.tsx",
     "**/.client/**/*.ts",

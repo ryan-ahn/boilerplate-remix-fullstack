@@ -24,12 +24,13 @@ const StyledWrapper = styled.div`
 const StyledContentBox = styled.div`
   ${flexSet('center', 'center', 'column')};
   ${boxSet('auto', 'auto', '50px')};
+  gap: 10px;
   & > h4 {
     ${fontSet(50, 500, 60)};
     text-align: center;
     white-space: pre-wrap;
   }
   & > p {
-    ${fontSet(20, 300, 24)};
+    ${fontSet(20, 100, 24)};
   }
 `;

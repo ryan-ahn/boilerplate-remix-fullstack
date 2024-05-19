@@ -1,7 +1,7 @@
 export const CONTENT_PAGE = {
   main: {
     body: 'REMIX\nSTARTER',
-    description: 'fast starter!',
+    description: 'Remix Awesome Starter🔥',
     button: {
       text: '콘텐츠 페이지로!',
       color: '#000000',
@@ -9,8 +9,9 @@ export const CONTENT_PAGE = {
   },
   content: {
     body: 'CONTENTS',
+    description: 'Contents Page!',
     button: {
-      text: '메인으로!',
+      text: '메인으로',
       color: '#000000',
     },
   },
