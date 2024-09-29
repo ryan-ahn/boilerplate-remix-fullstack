@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { createRemixStub } from '@remix-run/testing';
 
-import customButton from '@components/button/custom';
+import customTitle from '@components/title/custom';
 
-describe('Button component', () => {
+describe('Title component', () => {
   afterEach(() => {
     vi.restoreAllMocks();
   });
@@ -13,10 +13,9 @@ describe('Button component', () => {
       {
         path: '/',
         Component: () =>
-          customButton({
-            color: 'primary',
-            text: '버튼',
-            onClickFunction: () => {},
+          customTitle({
+            title: '제목',
+            description: '설명',
           }),
       },
     ]);

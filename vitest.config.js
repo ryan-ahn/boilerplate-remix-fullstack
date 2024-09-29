@@ -1,18 +1,15 @@
-export default {
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  plugins: [react(), tsconfigPaths()],
   test: {
-    coverage: {
-      provider: 'v8',
-      reporter: ['text', 'html', 'json-summary', 'json', 'lcov'],
-      enabled: true,
-      include: [
-        'apps/**/app/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-        'packages/**/src/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-      ],
-      exclude: [
-        'apps/**/app/{*,index,schema,*.stories,*.test}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-        'apps/**/app/**/{index,schema,*.stories,*.test}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-        'packages/**/src/**/{index,schema,*.stories,*.test}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
-      ],
-    },
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./test/setup-test-env.ts'],
+    include: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
   },
-};
+});
