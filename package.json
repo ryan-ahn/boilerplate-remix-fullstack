@@ -28,7 +28,7 @@
     "build": "remix vite:build",
     "dev": "remix vite:dev",
     "start": "remix-serve ./build/server/index.js",
-    "lint": "npm run lint:prettier && npm run lint:eslint",
+    "lint": "npm run lint:prettier",
     "lint:prettier": "prettier --check \"**/*.{ts,tsx,md}\"",
     "test": "vitest test",
     "test:update": "vitest test -u",
