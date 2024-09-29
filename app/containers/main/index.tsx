@@ -3,8 +3,8 @@ import { flexSet, boxSet, colorSet } from '@styles/mixin';
 import { useNavigate } from '@remix-run/react';
 import styled from '@emotion/styled';
 import { CONTENT_PAGE } from '@constants/data/content';
-import AtomsCustomTitle from '@components/atoms/title/custom';
-import AtomsCustomButton from '@components/atoms/button/custom';
+import AtomsCustomTitle from '@components/title/custom';
+import AtomsCustomButton from '@components/button/custom';
 
 export default function mainContainer() {
   // hooks
