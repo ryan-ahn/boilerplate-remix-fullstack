@@ -20,7 +20,6 @@
       "@components/*": ["app/components/*"],
       "@config/*": ["app/config/*"],
       "@constants/*": ["app/constants/*"],
-      "@containers/*": ["app/containers/*"],
       "@interfaces/*": ["app/interfaces/*"],
       "@layouts/*": ["app/layouts/*"],
       "@libs/*": ["app/libs/*"],
