@@ -1,24 +1,24 @@
-import { useCallback } from 'react';
-import { json, type MetaFunction } from '@remix-run/node';
-import { useLoaderData, useNavigate } from '@remix-run/react';
-import styled from '@emotion/styled';
-import { flexSet, boxSet, colorSet } from '@styles/mixin';
-import { CONTENT_PAGE } from '@constants/data/content';
-import { META_PAGE } from '@constants/data/meta';
-import AtomsCustomTitle from '@components/title/custom';
-import AtomsCustomButton from '@components/button/custom';
+import { useCallback } from "react";
+import { json, type MetaFunction } from "@remix-run/node";
+import { useLoaderData, useNavigate } from "@remix-run/react";
+import styled from "@emotion/styled";
+import { flexSet, boxSet, colorSet } from "@styles/mixin";
+import { CONTENT_PAGE } from "@constants/data/content";
+import { META_PAGE } from "@constants/data/meta";
+import AtomsCustomTitle from "@components/title/custom";
+import AtomsCustomButton from "@components/button/custom";
 
 export const meta: MetaFunction = () => [
   // default seo
   { title: META_PAGE.default.title },
-  { name: 'description', content: META_PAGE.default.description },
-  { name: 'keywords', content: META_PAGE.default.keywords },
-  { name: 'og:image', content: META_PAGE.default.ogImage },
+  { name: "description", content: META_PAGE.default.description },
+  { name: "keywords", content: META_PAGE.default.keywords },
+  { name: "og:image", content: META_PAGE.default.ogImage },
 ];
 
 export const loader = async () => {
   return json({
-    message: 'Remix Awesome Starter🔥',
+    message: "Remix Awesome Starter🔥",
   });
 };
 
@@ -32,7 +32,7 @@ export default function Index() {
 
   /** functions */
   const onClickRouteToContent = useCallback(() => {
-    navigate('/content');
+    navigate("/content");
   }, []);
 
   /** default render */
@@ -51,12 +51,12 @@ export default function Index() {
 }
 
 const StyledWrapper = styled.div`
-  ${flexSet('center', 'center', 'row')};
-  ${boxSet('100%', '100vh')};
-  ${colorSet('black', '#fffed3')};
+  ${flexSet("center", "center", "row")};
+  ${boxSet("100%", "100vh")};
+  ${colorSet("black", "#fffed3")};
 `;
 
 const StyledContentBox = styled.div`
-  ${flexSet('center', 'center', 'column')};
+  ${flexSet("center", "center", "column")};
   gap: 25px;
 `;

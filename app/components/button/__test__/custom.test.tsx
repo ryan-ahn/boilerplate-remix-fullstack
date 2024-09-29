@@ -1,21 +1,21 @@
-import { render, screen } from '@testing-library/react';
-import { createRemixStub } from '@remix-run/testing';
+import { render, screen } from "@testing-library/react";
+import { createRemixStub } from "@remix-run/testing";
 
-import customButton from '@components/button/custom';
+import customButton from "@components/button/custom";
 
-describe('Button component', () => {
+describe("Button component", () => {
   afterEach(() => {
     vi.restoreAllMocks();
   });
 
-  it('renders', async () => {
+  it("renders", async () => {
     const RemixStub = createRemixStub([
       {
-        path: '/',
+        path: "/",
         Component: () =>
           customButton({
-            color: 'primary',
-            text: '버튼',
+            color: "primary",
+            text: "버튼",
             onClickFunction: () => {},
           }),
       },

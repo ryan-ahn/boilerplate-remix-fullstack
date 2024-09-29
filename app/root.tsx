@@ -1,7 +1,7 @@
-import { ReactNode, useContext, useEffect, useRef } from 'react';
-import ServerStyleContext from '@styles/server';
-import GlobalStyles from '@styles/global';
-import ClientStyleContext from '@styles/client';
+import { ReactNode, useContext, useEffect, useRef } from "react";
+import ServerStyleContext from "@styles/server";
+import GlobalStyles from "@styles/global";
+import ClientStyleContext from "@styles/client";
 import {
   Links,
   LiveReload,
@@ -9,8 +9,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from '@remix-run/react';
-import { withEmotionCache } from '@emotion/react';
+} from "@remix-run/react";
+import { withEmotionCache } from "@emotion/react";
 
 interface DocumentProps {
   children: ReactNode;
@@ -48,7 +48,7 @@ const Document = withEmotionCache(
           {serverStyleData?.map(({ key, ids, css }) => (
             <style
               key={key}
-              data-emotion={`${key} ${ids.join(' ')}`}
+              data-emotion={`${key} ${ids.join(" ")}`}
               // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{ __html: css }}
             />

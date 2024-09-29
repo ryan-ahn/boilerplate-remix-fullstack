@@ -1,6 +1,6 @@
-import { flexSet, boxSet, fontSet } from '@styles/mixin';
-import { IAtomsCustomTitleProps } from '@interfaces/props';
-import styled from '@emotion/styled';
+import { flexSet, boxSet, fontSet } from "@styles/mixin";
+import { IAtomsCustomTitleProps } from "@interfaces/props";
+import styled from "@emotion/styled";
 
 export default function customTitle({
   title,
@@ -22,8 +22,8 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledContentBox = styled.div`
-  ${flexSet('center', 'center', 'column')};
-  ${boxSet('auto', 'auto', '50px')};
+  ${flexSet("center", "center", "column")};
+  ${boxSet("auto", "auto", "50px")};
   gap: 10px;
   & > h4 {
     ${fontSet(50, 500, 60)};

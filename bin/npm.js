@@ -1,8 +1,8 @@
-import { execSync } from 'child_process';
+import { execSync } from "child_process";
 
 const runCommand = command => {
   try {
-    execSync(command, { stdio: 'inherit' });
+    execSync(command, { stdio: "inherit" });
     return true;
   } catch (e) {
     console.error(`Failed to execute ${command}`, e);
@@ -25,4 +25,4 @@ if (!installedDeps) {
   process.exit(-1);
 }
 
-console.log('======= Success =======');
+console.log("======= Success =======");
