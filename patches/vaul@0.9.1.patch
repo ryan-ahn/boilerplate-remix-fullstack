@@ -1,0 +1,26 @@
+diff --git a/dist/index.js b/dist/index.js
+index ec36ce840e18e623ef3bcfb6cde0254a85b77438..3ca5d2ca077ca86984d7ad8437eb674072369366 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -1067,7 +1067,7 @@ function Root({ open: openProp, onOpenChange, children, shouldScaleBackground, o
+         shouldScaleBackground
+     ]);
+     // LayoutEffect to prevent extra render where openProp and isOpen are not synced yet
+-    React__namespace.default.useLayoutEffect(()=>{
++    useIsomorphicLayoutEffect(()=>{
+         if (openProp) {
+             setIsOpen(true);
+             setHasBeenOpened(true);
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 36734490810831a22a088e001a0383e1d8c5e2af..a6d26f42dde7b858111a65ec422f57e0ef025915 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -1045,7 +1045,7 @@ function Root({ open: openProp, onOpenChange, children, shouldScaleBackground, o
+         shouldScaleBackground
+     ]);
+     // LayoutEffect to prevent extra render where openProp and isOpen are not synced yet
+-    React__default.useLayoutEffect(()=>{
++    useIsomorphicLayoutEffect(()=>{
+         if (openProp) {
+             setIsOpen(true);
+             setHasBeenOpened(true);
