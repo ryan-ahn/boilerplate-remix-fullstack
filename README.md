@@ -11,6 +11,8 @@
 - [x] 🗄️&nbsp;&nbsp;Database Design (Prisma)
 - [x] 📙&nbsp;&nbsp;Strict Codebase (ESLint & Prettier)
 - [x] 🧵&nbsp;&nbsp;Built-in Component & Layouts
+- [x] 🧪&nbsp;&nbsp;Component Test Code
+- [x] 📊&nbsp;&nbsp;Test Coverage Measurement
 - [x] ✨&nbsp;&nbsp;Reset Style Setup
 - [x] ⚡️&nbsp;&nbsp;Mixin Style Setup
 - [x] 📍&nbsp;&nbsp;Absolute Paths
