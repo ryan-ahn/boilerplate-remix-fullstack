@@ -1,23 +1,19 @@
 # Ryan's Remix Awesome Starter
 
-
 ![Author](https://img.shields.io/badge/Author-ryan-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Last Commit](https://img.shields.io/github/last-commit/ryan-ahn/npm-remix-starter)
-
 
 ## Features
 
 - [x] ⚙️&nbsp;&nbsp;Small & Fast Bundler (Vite)
 - [x] 🗝️&nbsp;&nbsp;Typed Programming (TypeScript)
 - [x] 🗄️&nbsp;&nbsp;Database Design (Prisma)
-- [x] 🕋&nbsp;&nbsp;Simple State Management (Zustand)
 - [x] 📙&nbsp;&nbsp;Strict Codebase (ESLint & Prettier)
 - [x] 🧵&nbsp;&nbsp;Built-in Component & Layouts
 - [x] ✨&nbsp;&nbsp;Reset Style Setup
 - [x] ⚡️&nbsp;&nbsp;Mixin Style Setup
 - [x] 📍&nbsp;&nbsp;Absolute Paths
-- [x] 📱&nbsp;&nbsp;Check Detection
 - [x] 📫&nbsp;&nbsp;Page SEO
 - [ ] 🪄&nbsp;&nbsp;Dark Mode
 
@@ -67,13 +63,19 @@ npm run build
 
 ```javascript
 // use mixin
-import { flexSet, boxSet, colorSet, backgroundSet, fontSet } from '@styles/mixin';
+import {
+  flexSet,
+  boxSet,
+  colorSet,
+  backgroundSet,
+  fontSet,
+} from '@styles/mixin';
 
 const Style = styled.div`
   ${theme.flexSet('center', 'center', 'column')};
   ${theme.boxSet('00px', '00px', '00px')};
   ${theme.colorSet('white', 'black')};
-  ${theme.backgroundSet('URL','contain')};
+  ${theme.backgroundSet('URL', 'contain')};
   ${theme.fontSet(00, 000, 00)};
-`
+`;
 ```

@@ -10,6 +10,12 @@ export const meta: MetaFunction = () => [
   { name: 'og:image', content: META_PAGE.content.ogImage },
 ];
 
+export async function loader() {
+  return {
+    data: 'content',
+  };
+}
+
 export default function contentPage() {
   return <ContentContainer />;
 }
