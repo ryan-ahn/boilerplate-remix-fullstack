@@ -1,12 +1,12 @@
-import { PassThrough } from 'node:stream';
-import { renderToPipeableStream, renderToString } from 'react-dom/server';
-import { isbot } from 'isbot';
-import ServerStyleContext from '@styles/server';
-import createEmotionCache from '@styles/cache';
-import { RemixServer } from '@remix-run/react';
-import type { EntryContext } from '@remix-run/node';
-import createEmotionServer from '@emotion/server/create-instance';
-import { CacheProvider } from '@emotion/react';
+import { PassThrough } from "node:stream";
+import { renderToPipeableStream, renderToString } from "react-dom/server";
+import { isbot } from "isbot";
+import ServerStyleContext from "@styles/server";
+import createEmotionCache from "@styles/cache";
+import { RemixServer } from "@remix-run/react";
+import type { EntryContext } from "@remix-run/node";
+import createEmotionServer from "@emotion/server/create-instance";
+import { CacheProvider } from "@emotion/react";
 
 const ABORT_DELAY = 5_000;
 
@@ -16,7 +16,7 @@ export default function handleRequest(
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
-  return isbot(request.headers.get('user-agent') || '')
+  return isbot(request.headers.get("user-agent") || "")
     ? handleBotRequest(
         request,
         responseStatusCode,
@@ -66,7 +66,7 @@ function handleBotRequest(
           );
 
           const body = new PassThrough();
-          responseHeaders.set('Content-Type', 'text/html');
+          responseHeaders.set("Content-Type", "text/html");
           resolve(
             new Response(`<!DOCTYPE html>${finalHtml}`, {
               headers: responseHeaders,
@@ -124,7 +124,7 @@ function handleBrowserRequest(
           );
 
           const body = new PassThrough();
-          responseHeaders.set('Content-Type', 'text/html');
+          responseHeaders.set("Content-Type", "text/html");
           resolve(
             new Response(`<!DOCTYPE html>${finalHtml}`, {
               headers: responseHeaders,

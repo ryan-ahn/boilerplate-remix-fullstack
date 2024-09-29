@@ -71,13 +71,13 @@ import {
   colorSet,
   backgroundSet,
   fontSet,
-} from '@styles/mixin';
+} from "@styles/mixin";
 
 const Style = styled.div`
-  ${theme.flexSet('center', 'center', 'column')};
-  ${theme.boxSet('00px', '00px', '00px')};
-  ${theme.colorSet('white', 'black')};
-  ${theme.backgroundSet('URL', 'contain')};
+  ${theme.flexSet("center", "center", "column")};
+  ${theme.boxSet("00px", "00px", "00px")};
+  ${theme.colorSet("white", "black")};
+  ${theme.backgroundSet("URL", "contain")};
   ${theme.fontSet(00, 000, 00)};
 `;
 ```

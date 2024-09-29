@@ -1,0 +1,12 @@
+node_modules/
+coverage/
+build/
+drizzle/
+.wrangler/
+
+.env
+pnpm-lock.yaml
+*.d.ts
+supabase.database.type.ts
+
+**/*.zod.*

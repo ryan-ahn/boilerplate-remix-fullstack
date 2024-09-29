@@ -4,8 +4,8 @@ import {
   TFlexDirection,
   TFontWeight,
   TJustifyContent,
-} from '@interfaces/alias';
-import { css } from '@emotion/react';
+} from "@interfaces/alias";
+import { css } from "@emotion/react";
 
 // flex Set
 export const flexSet = (
@@ -27,7 +27,7 @@ export const boxSet = (
 ) => css`
   width: ${width};
   height: ${height};
-  ${borderRadius ? `border-radius: ${borderRadius};` : ''}
+  ${borderRadius ? `border-radius: ${borderRadius};` : ""}
 `;
 
 // font Set
@@ -44,11 +44,11 @@ export const fontSet = (
 // color Set
 export const colorSet = (color: string, background?: string) => css`
   color: ${color};
-  ${background ? `background-color: ${background};` : ''}
+  ${background ? `background-color: ${background};` : ""}
 `;
 
 // background Set
-export const backgroundSet = (url: string, size: string = 'cover') => css`
+export const backgroundSet = (url: string, size: string = "cover") => css`
   background-image: url(${url});
   background-size: ${size};
   background-repeat: no-repeat;
