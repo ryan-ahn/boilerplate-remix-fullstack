@@ -10,14 +10,13 @@
 - [x] 🗝️&nbsp;&nbsp;Typed Programming (TypeScript)
 - [x] 🗄️&nbsp;&nbsp;Database Design (Prisma)
 - [x] 📙&nbsp;&nbsp;Strict Codebase (ESLint & Prettier)
+- [x] 🧪&nbsp;&nbsp;Component Test Code (Vitest)
+- [x] 📊&nbsp;&nbsp;Test Coverage Measurement (Vitest)
 - [x] 🧵&nbsp;&nbsp;Built-in Component & Layouts
-- [x] 🧪&nbsp;&nbsp;Component Test Code
-- [x] 📊&nbsp;&nbsp;Test Coverage Measurement
 - [x] ✨&nbsp;&nbsp;Reset Style Setup
 - [x] ⚡️&nbsp;&nbsp;Mixin Style Setup
 - [x] 📍&nbsp;&nbsp;Absolute Paths
 - [x] 📫&nbsp;&nbsp;Page SEO
-- [ ] 🪄&nbsp;&nbsp;Dark Mode
 
 ## Frameworks
 
@@ -25,6 +24,7 @@
 - **SSR** : Remix
 - **Core** : React
 - **Store** : Zustand
+- **Test** : Vitest
 - **Style** : Emotion
 
 ## Code Pattern
